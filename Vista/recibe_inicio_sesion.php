@@ -1,6 +1,7 @@
 <?php
 
     require_once("../Controlador/usuario.controlador.php");
+    require_once("../Modelo/usuario.modelo.php");
     require_once("../Conexion/db.php");
 
     $Correo = $_POST['correoUsuario'];

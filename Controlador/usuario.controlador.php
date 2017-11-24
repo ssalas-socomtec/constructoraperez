@@ -1,6 +1,6 @@
 <?php 
 
-	require_once("../Modelo/usuario.modelo.php");
+	
 
 	function Agregar_Usuario($Run, $PrimerNombre, $SegundoNombre, $ApellidoPaterno, $ApellidoMaterno, $Telefono, $Correo, $FkCiudad, $Direccion, $fkGenero, $Contrasena, $FkTipoUsuario){
 
@@ -23,6 +23,14 @@
 		$Datos = $Modelo_Usuario->Editar_Usuario($PrimerNombre, $SegundoNombre, $ApellidoPaterno, $ApellidoMaterno, $Telefono, $Correo, $FkCiudad, $Direccion, $fkGenero, $Contrasena, $Run);
 
 	}
+
+	function Listar_Cliente(){
+		
+				$Modelo_Usuario = new Usuario_Modelo;
+				$Datos = $Modelo_Usuario->Listar_Cliente();
+				return $Datos;
+		
+			}
 
 
 

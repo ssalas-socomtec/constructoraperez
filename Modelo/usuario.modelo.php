@@ -38,4 +38,18 @@ class Usuario_Modelo{
 
 	}
 
+	public function Listar_Cliente(){
+		
+				$consulta = $this->db->query("SELECT * FROM usuario WHERE usuario.fkTipoUsuario = 2");
+		
+				while($filas=$consulta->fetch_assoc()){
+						
+					$this->datos[]=$filas;
+						
+				}
+						
+					return $this->datos;
+		
+			}
+
 }
