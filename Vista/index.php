@@ -68,15 +68,9 @@
                             } //cierre del Else
 
                         } //Cierre de Success
-
                     }); //Cierre del Ajax
-
-                }
-
-                
-
+                }//Cierre la Comprobación para Ajax
             }); //Cierre del iniciar Sesion
-
         }); //Cierre del document ready
     </script>
 </head>

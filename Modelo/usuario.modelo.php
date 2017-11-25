@@ -24,7 +24,7 @@ class Usuario_Modelo{
 	
 	}
 
-	public function Buscar_Usuario($Correo, $Contrasena){
+	public function Verificar_Usuario($Correo, $Contrasena){
 
 		$consulta = $this->db->query("SELECT * FROM usuario WHERE usuario.correoU = '$Correo' AND usuario.contrasenaU = '$Contrasena'");
 
@@ -37,6 +37,20 @@ class Usuario_Modelo{
 			return $this->datos;
 
 	}
+
+	public function Buscar_Cliente($Run){
+		
+				$consulta = $this->db->query("SELECT * FROM usuario WHERE usuario.runU = '$Run'");
+		
+				while($filas=$consulta->fetch_assoc()){
+						
+					$this->datos[]=$filas;
+						
+				}
+						
+					return $this->datos;
+		
+			}
 
 	public function Listar_Cliente(){
 		
