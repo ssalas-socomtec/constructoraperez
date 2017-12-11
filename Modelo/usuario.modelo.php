@@ -16,7 +16,7 @@ class Usuario_Modelo{
 
 	public function Insertar_Administrador_Zona($Run, $PrimerNombre, $SegundoNombre, $ApellidoPaterno, $ApellidoMaterno, $Telefono, $Correo, $FkCiudad, $Direccion, $fkGenero, $Contrasena, $FkTipoUsuario){
 		
-		$consult = $this->db->prepare("INSERT INTO usuario (runU, primerNombreU, segundoNombreU, apellidoPaternoU, apellidoMaternoU, telefonoU, correoU, fkCiudad, direccionU, fkGenero, contrasenaU, fkTipoUsuario) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		$consult = $this->db->prepare("INSERT INTO usuario (runU, primerNombreU, segundoNombreU, apellidoPaternoU, apellidoMaternoU, telefonoU, correoU, fkComuna, direccionU, fkGenero, contrasenaU, fkTipoUsuario) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		
 		$consult->bind_param('sssssisisisi', $Run, $PrimerNombre, $SegundoNombre, $ApellidoPaterno, $ApellidoMaterno, $Telefono, $Correo, $FkCiudad, $Direccion, $fkGenero, $Contrasena, $FkTipoUsuario);
 
@@ -40,21 +40,21 @@ class Usuario_Modelo{
 
 	public function Buscar_Cliente($Run){
 		
-				$consulta = $this->db->query("SELECT * FROM usuario WHERE usuario.runU = '$Run'");
+		$consulta = $this->db->query("SELECT * FROM usuario INNER JOIN comuna ON comuna.COMUNA_ID = usuario.fkComuna WHERE usuario.runU = '$Run'");
 		
-				while($filas=$consulta->fetch_assoc()){
+			while($filas=$consulta->fetch_assoc()){
 						
 					$this->datos[]=$filas;
 						
-				}
-						
-					return $this->datos;
-		
 			}
+						
+		return $this->datos;
+		
+	}
 
 	public function Listar_Cliente(){
 		
-				$consulta = $this->db->query("SELECT * FROM usuario WHERE usuario.fkTipoUsuario = 2");
+				$consulta = $this->db->query("SELECT * FROM usuario INNER JOIN comuna on fkComuna = COMUNA_ID WHERE usuario.fkTipoUsuario = 2");
 		
 				while($filas=$consulta->fetch_assoc()){
 						

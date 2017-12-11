@@ -22,7 +22,7 @@
             $_SESSION['apellidoMaterno'] = $Usuario['apellidoMaternoU'];
             $_SESSION['telefono'] = $Usuario['telefonoU'];
             $_SESSION['correo'] = $Usuario['correoU'];
-            $_SESSION['ciudad'] = $Usuario['fkCiudad'];
+            $_SESSION['ciudad'] = $Usuario['fkComuna'];
             $_SESSION['direccion'] = $Usuario['direccionU'];
             $_SESSION['sexo'] = $Usuario['fkGenero'];
             $_SESSION['tipoUsuario'] = $Usuario['fkTipoUsuario'];
@@ -32,7 +32,7 @@
                 case 1 : echo json_encode("Admin/index.php");
                         break;
                         
-                case 2 :  echo json_encode("Cliente/index.php");
+                case 2 :  echo json_encode("index.php");
                         break;
             }    
               

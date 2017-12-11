@@ -5,7 +5,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,7 +80,7 @@
                         <td><?php echo $Cliente['primerNombreU'] ." " .$Cliente['apellidoPaternoU']; ?> </td>
                         <td><?php echo $Cliente['telefonoU']; ?> </td>
                         <td><?php echo $Cliente['correoU']; ?> </td>
-                        <td><?php echo $Cliente['fkCiudad']; ?> </td>
+                        <td><?php echo $Cliente['COMUNA_NOMBRE']; ?> </td>
                         <td>
                             <div class="row">
                                 <div>
